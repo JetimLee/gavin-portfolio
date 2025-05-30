@@ -67,7 +67,7 @@ const Portfolio = () => {
 
   const experiences = [
     {
-      title: "Full Stack Developer",
+      title: "Full Stack Engineer",
       company: "Academic Programs International",
       location: "Austin, Texas",
       period: "January 2023 - Present",
@@ -269,7 +269,7 @@ const Portfolio = () => {
           <div className="mb-8 relative inline-block">
             <div className="w-48 h-48 rounded-full p-1">
               <img
-                src="public/images/profile.jpeg"
+                src="images/profile.jpeg"
                 alt="Gavin Coulson"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -284,7 +284,7 @@ const Portfolio = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            Product Professional, Data Engineer & Full Stack Developer
+            Product Professional, Data Engineer & Full Stack Engineer
           </p>
 
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
