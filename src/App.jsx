@@ -20,7 +20,7 @@ import {
 
 const Portfolio = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState("hero");
+  const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -29,7 +29,7 @@ const Portfolio = () => {
       setScrollY(window.scrollY);
 
       const sections = [
-        "hero",
+        "home",
         "about",
         "experience",
         "skills",
@@ -193,6 +193,7 @@ const Portfolio = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {[
+                "Home",
                 "About",
                 "Experience",
                 "Skills",
@@ -260,7 +261,7 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section
-        id="hero"
+        id="home"
         className="min-h-screen flex items-center justify-center relative z-10"
       >
         <div className="text-center px-4 max-w-5xl mx-auto">
@@ -283,7 +284,7 @@ const Portfolio = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-4">
-            Product Professional & Full Stack Developer
+            Product Professional, Data Engineer & Full Stack Developer
           </p>
 
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
