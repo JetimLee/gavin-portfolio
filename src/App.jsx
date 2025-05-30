@@ -191,7 +191,7 @@ const Portfolio = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
               {[
                 "Home",
                 "About",
@@ -215,7 +215,7 @@ const Portfolio = () => {
                   )}
                 </button>
               ))}
-              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105">
+              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
                 Contact Me
               </button>
             </div>
@@ -238,6 +238,7 @@ const Portfolio = () => {
         >
           <div className="px-4 py-2 space-y-1">
             {[
+              "Home",
               "About",
               "Experience",
               "Skills",
@@ -262,76 +263,80 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative z-10"
+        className="min-h-screen flex items-center justify-center relative z-10 pt-16"
       >
         <div className="text-center px-4 max-w-5xl mx-auto">
           {/* Photo Placeholder */}
           <div className="mb-8 relative inline-block">
-            <div className="w-48 h-48 rounded-full p-1">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full p-1">
               <img
                 src="images/profile.jpeg"
                 alt="Gavin Coulson"
                 className="w-full h-full rounded-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 blur-2xl opacity-50 animate-pulse"></div>
+            <div className="absolute inset-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 blur-2xl opacity-50 animate-pulse"></div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className=" bg-clip-text text-transparent animate-gradient bg-300%">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient bg-300%">
               Gavin Coulson
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-3 sm:mb-4">
             Product Professional, Data Engineer & Full Stack Engineer
           </p>
 
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Building and scaling digital products that drive measurable business
             growth through technical innovation and strategic leadership
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-8 sm:mb-12 max-w-3xl mx-auto">
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 border border-slate-700"
+                className="bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-4 border border-slate-700"
               >
-                <div className="text-purple-400 mb-2 flex justify-center">
-                  {stat.icon}
+                <div className="text-purple-400 mb-1 sm:mb-2 flex justify-center">
+                  {React.cloneElement(stat.icon, { size: 20 })}
                 </div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-gray-400">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/JetimLee"
-              className="group flex items-center gap-2 px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-xl hover:bg-slate-700 transition-all transform hover:scale-105 border border-slate-700"
+              className="group flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-slate-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl hover:bg-slate-700 transition-all transform hover:scale-105 border border-slate-700"
             >
               <Github
-                size={20}
+                size={16}
                 className="group-hover:text-purple-400 transition-colors"
               />
-              <span>GitHub</span>
+              <span className="text-sm sm:text-base">GitHub</span>
             </a>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.linkedin.com/in/gavin-coulson/"
-              className="group flex items-center gap-2 px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-xl hover:bg-slate-700 transition-all transform hover:scale-105 border border-slate-700"
+              className="group flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-slate-800/80 backdrop-blur-sm rounded-lg sm:rounded-xl hover:bg-slate-700 transition-all transform hover:scale-105 border border-slate-700"
             >
               <Linkedin
-                size={20}
+                size={16}
                 className="group-hover:text-purple-400 transition-colors"
               />
-              <span>LinkedIn</span>
+              <span className="text-sm sm:text-base">LinkedIn</span>
             </a>
           </div>
 
@@ -340,7 +345,7 @@ const Portfolio = () => {
             className="animate-bounce"
           >
             <ChevronDown
-              size={32}
+              size={28}
               className="text-gray-400 hover:text-purple-400 transition-colors"
             />
           </button>
@@ -348,45 +353,49 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 relative z-10">
+      <section id="about" className="py-16 sm:py-20 px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-purple-500/50 transition-all transform hover:-translate-y-2">
-              <div className="mb-4 p-3 bg-purple-500/20 rounded-xl inline-block group-hover:scale-110 transition-transform">
-                <Code className="text-purple-400" size={32} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-700 hover:border-purple-500/50 transition-all transform hover:-translate-y-1 sm:hover:-translate-y-2">
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-purple-500/20 rounded-lg sm:rounded-xl inline-block group-hover:scale-110 transition-transform">
+                <Code className="text-purple-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
                 Technical Excellence
               </h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-sm sm:text-base">
                 4+ years building scalable products with modern tech stacks
                 including React, Node.js, and cloud platforms
               </p>
             </div>
 
-            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-blue-500/50 transition-all transform hover:-translate-y-2">
-              <div className="mb-4 p-3 bg-blue-500/20 rounded-xl inline-block group-hover:scale-110 transition-transform">
-                <Users className="text-blue-400" size={32} />
+            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-700 hover:border-blue-500/50 transition-all transform hover:-translate-y-1 sm:hover:-translate-y-2">
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-blue-500/20 rounded-lg sm:rounded-xl inline-block group-hover:scale-110 transition-transform">
+                <Users className="text-blue-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Leadership</h3>
-              <p className="text-gray-400">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
+                Leadership
+              </h3>
+              <p className="text-gray-400 text-sm sm:text-base">
                 Military leadership experience combined with cross-functional
                 team management in tech environments
               </p>
             </div>
 
-            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-pink-500/50 transition-all transform hover:-translate-y-2">
-              <div className="mb-4 p-3 bg-pink-500/20 rounded-xl inline-block group-hover:scale-110 transition-transform">
-                <TrendingUp className="text-pink-400" size={32} />
+            <div className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-700 hover:border-pink-500/50 transition-all transform hover:-translate-y-1 sm:hover:-translate-y-2">
+              <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-pink-500/20 rounded-lg sm:rounded-xl inline-block group-hover:scale-110 transition-transform">
+                <TrendingUp className="text-pink-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Business Impact</h3>
-              <p className="text-gray-400">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">
+                Business Impact
+              </h3>
+              <p className="text-gray-400 text-sm sm:text-base">
                 Proven track record of driving 25-40% growth in user engagement
                 and revenue through strategic product initiatives
               </p>
@@ -398,42 +407,46 @@ const Portfolio = () => {
       {/* Experience Section */}
       <section
         id="experience"
-        className="py-20 px-4 bg-slate-800/20 relative z-10"
+        className="py-16 sm:py-20 px-4 bg-slate-800/20 relative z-10"
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Professional Experience
             </span>
           </h2>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-purple-500/50 transition-all"
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-700 hover:border-purple-500/50 transition-all"
               >
-                <div className="flex flex-wrap justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6 gap-2">
+                  <div className="flex-1">
+                    <h3 className="text-xl sm:text-2xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">
                       {exp.title}
                     </h3>
-                    <p className="text-xl text-gray-300">{exp.company}</p>
-                    <p className="text-gray-400 flex items-center gap-2 mt-2">
-                      <MapPin size={16} />
+                    <p className="text-lg sm:text-xl text-gray-300">
+                      {exp.company}
+                    </p>
+                    <p className="text-gray-400 flex items-center gap-2 mt-1 sm:mt-2 text-sm sm:text-base">
+                      <MapPin size={14} />
                       {exp.location}
                     </p>
                   </div>
-                  <span className="text-gray-400 text-sm bg-slate-700/50 px-4 py-2 rounded-full">
+                  <span className="text-gray-400 text-xs sm:text-sm bg-slate-700/50 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
                     {exp.period}
                   </span>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2 sm:space-y-3">
                   {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
-                      <span className="text-gray-300">{highlight}</span>
+                    <li key={idx} className="flex items-start gap-2 sm:gap-3">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mt-2 sm:mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-gray-300 text-sm sm:text-base">
+                        {highlight}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -444,28 +457,28 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 relative z-10">
+      <section id="skills" className="py-16 sm:py-20 px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Core Competencies
             </span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {Object.entries(skills).map(([category, items]) => (
               <div
                 key={category}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 hover:border-purple-500/50 transition-all"
+                className="bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-700 hover:border-purple-500/50 transition-all"
               >
-                <h3 className="text-xl font-bold mb-6 text-purple-400">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-purple-400">
                   {category}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {items.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-4 py-2 bg-slate-700/50 rounded-full text-sm text-gray-300 hover:bg-slate-600/50 hover:text-white transition-all hover:scale-105 transform cursor-default"
+                      className="px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-700/50 rounded-full text-xs sm:text-sm text-gray-300 hover:bg-slate-600/50 hover:text-white transition-all hover:scale-105 transform cursor-default"
                     >
                       {skill}
                     </span>
@@ -480,16 +493,16 @@ const Portfolio = () => {
       {/* Education Section */}
       <section
         id="education"
-        className="py-20 px-4 bg-slate-800/20 relative z-10"
+        className="py-16 sm:py-20 px-4 bg-slate-800/20 relative z-10"
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Education
             </span>
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {[
               {
                 degree: "BS Computer Science, Minor in Applied Mathematics",
@@ -512,17 +525,21 @@ const Portfolio = () => {
             ].map((edu, idx) => (
               <div
                 key={idx}
-                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-purple-500/50 transition-all flex items-start gap-4"
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-purple-500/50 transition-all flex items-start gap-3 sm:gap-4"
               >
-                <div className="p-3 bg-slate-700/50 rounded-xl group-hover:scale-110 transition-transform">
-                  {edu.icon}
+                <div className="p-2 sm:p-3 bg-slate-700/50 rounded-lg sm:rounded-xl group-hover:scale-110 transition-transform">
+                  {React.cloneElement(edu.icon, { size: 20 })}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-blue-400">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-blue-400">
                     {edu.degree}
                   </h3>
-                  <p className="text-gray-300">{edu.school}</p>
-                  <p className="text-gray-400 text-sm mt-1">{edu.date}</p>
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    {edu.school}
+                  </p>
+                  <p className="text-gray-400 text-xs sm:text-sm mt-1">
+                    {edu.date}
+                  </p>
                 </div>
               </div>
             ))}
@@ -531,15 +548,18 @@ const Portfolio = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-20 px-4 relative z-10">
+      <section
+        id="certifications"
+        className="py-16 sm:py-20 px-4 relative z-10"
+      >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Certifications & Recognition
             </span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {[
               {
                 title: "AWS Cloud Practitioner",
@@ -568,24 +588,26 @@ const Portfolio = () => {
             ].map((cert, idx) => (
               <div
                 key={idx}
-                className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-purple-500/50 transition-all transform hover:scale-105 flex items-center gap-4"
+                className="group bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-purple-500/50 transition-all transform hover:scale-[1.03] flex items-center gap-3 sm:gap-4"
               >
                 <div
-                  className={`text-4xl group-hover:scale-125 transition-transform`}
+                  className={`text-3xl sm:text-4xl group-hover:scale-110 transition-transform`}
                 >
                   {cert.icon}
                 </div>
                 <div className="flex-1">
                   <h3
-                    className={`font-bold text-lg bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`}
+                    className={`font-bold text-base sm:text-lg md:text-xl bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`}
                   >
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{cert.year}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">
+                    {cert.year}
+                  </p>
                 </div>
                 <Trophy
                   className="text-gray-600 group-hover:text-purple-400 transition-colors"
-                  size={20}
+                  size={18}
                 />
               </div>
             ))}
@@ -594,32 +616,36 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-4 border-t border-slate-800 relative z-10">
+      <footer className="py-12 sm:py-16 px-4 border-t border-slate-800 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             Let's Build Something Amazing Together
           </h3>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">
             I'm always open to discussing new opportunities and interesting
             projects
           </p>
 
-          <div className="flex justify-center gap-6 mb-8">
+          <div className="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
             <a
-              href="#"
-              className="p-3 bg-slate-800 rounded-xl hover:bg-slate-700 hover:text-purple-400 transition-all transform hover:scale-110"
+              href="https://github.com/JetimLee"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-3 bg-slate-800 rounded-lg sm:rounded-xl hover:bg-slate-700 hover:text-purple-400 transition-all transform hover:scale-110"
             >
-              <Github size={24} />
+              <Github size={20} />
             </a>
             <a
-              href="#"
-              className="p-3 bg-slate-800 rounded-xl hover:bg-slate-700 hover:text-purple-400 transition-all transform hover:scale-110"
+              href="https://www.linkedin.com/in/gavin-coulson/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 sm:p-3 bg-slate-800 rounded-lg sm:rounded-xl hover:bg-slate-700 hover:text-purple-400 transition-all transform hover:scale-110"
             >
-              <Linkedin size={24} />
+              <Linkedin size={20} />
             </a>
           </div>
 
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs sm:text-sm">
             © 2025 Gavin Coulson. Crafted with passion and React.
           </p>
         </div>
