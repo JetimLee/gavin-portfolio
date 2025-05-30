@@ -1,0 +1,86 @@
+/* Updated Tailwind imports */
+@import "tailwindcss";
+
+:root {
+  /* Custom animations */
+  --animate-gradient: gradient 3s ease infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  /* Custom colors */
+  --color-primary: #8b5cf6;
+  --color-secondary: #3b82f6;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-800: #1e293b;
+
+  /* Custom spacing */
+  --spacing-section: 5rem;
+}
+
+/* Updated utility layer */
+@layer utilities {
+  .animate-gradient {
+    animation: var(--animate-gradient);
+  }
+
+  .animate-float {
+    animation: var(--animate-float);
+  }
+
+  .bg-300pc {
+    background-size: 300% 300%;
+  }
+
+  .glass {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+  }
+}
+
+/* Updated scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--slate-800);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-600);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-500);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+/* Define custom keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
