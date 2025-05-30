@@ -215,9 +215,15 @@ const Portfolio = () => {
                   )}
                 </button>
               ))}
-              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
-                Contact Me
-              </button>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/gavin-coulson/"
+              >
+                <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
+                  Contact Me
+                </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -285,7 +291,7 @@ const Portfolio = () => {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-3 sm:mb-4">
-            Product Professional, Data Engineer & Full Stack Engineer
+            Product Professional, Data & Full Stack Engineer
           </p>
 
           <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
