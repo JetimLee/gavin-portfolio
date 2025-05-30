@@ -215,15 +215,16 @@ const Portfolio = () => {
                   )}
                 </button>
               ))}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/gavin-coulson/"
-              >
-                <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
+
+              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.linkedin.com/in/gavin-coulson/"
+                >
                   Contact Me
-                </button>
-              </a>
+                </a>
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -260,7 +261,13 @@ const Portfolio = () => {
               </button>
             ))}
             <button className="w-full mt-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium">
-              Contact Me
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/gavin-coulson/"
+              >
+                Contact Me
+              </a>
             </button>
           </div>
         </div>
