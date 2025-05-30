@@ -24,6 +24,8 @@ const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const currentYear = new Date().getFullYear();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -216,15 +218,14 @@ const Portfolio = () => {
                 </button>
               ))}
 
-              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/gavin-coulson/"
-                >
-                  Contact Me
-                </a>
-              </button>
+              <a
+                className="px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:scale-105 whitespace-nowrap"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/gavin-coulson/"
+              >
+                Contact Me
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -260,15 +261,15 @@ const Portfolio = () => {
                 {item}
               </button>
             ))}
-            <button className="w-full mt-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com/in/gavin-coulson/"
-              >
-                Contact Me
-              </a>
-            </button>
+
+            <a
+              className="w-full mt-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/gavin-coulson/"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
       </nav>
@@ -659,7 +660,7 @@ const Portfolio = () => {
           </div>
 
           <p className="text-gray-500 text-xs sm:text-sm">
-            © 2025 Gavin Coulson. Crafted with passion and React.
+            © {currentYear} Gavin Coulson. Crafted with passion and React.
           </p>
         </div>
       </footer>
